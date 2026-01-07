@@ -180,6 +180,10 @@ a{
     color: #5b666f;
 }
 
+.decent-white{
+    color: #a2a2a2;
+}
+
 .prim-color{
     color: #ff432a;
 }
@@ -282,6 +286,10 @@ a{
 
 .contain{
     object-fit: contain;
+}
+
+.cover{
+    object-fit: cover;
 }
 
 .svg {

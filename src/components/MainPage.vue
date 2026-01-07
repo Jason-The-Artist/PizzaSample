@@ -81,12 +81,26 @@
   width: 20px;
 }
 
+.dark-gradient{
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 10%, transparent 60%);
+}
+
+@media (max-width: 1100px) {
+  .contact-column{
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 1000px) {
   .hide-pizza{
     display: none;
   }
   .half-width{
     width: 100%;
+  }
+
+  .dark-gradient{
+    background: rgba(0, 0, 0, 0.5)
   }
 
   .mobile-center-horizontal{
@@ -115,9 +129,6 @@
 
 }
 @media (max-width: 720px) {
-  .contact-column{
-    flex-direction: column;
-  }
 
   .address-card{
     width: 85%;
@@ -159,14 +170,17 @@
 
 <template>
 
-  <Nav class="fade-bottom-before on-top" :class="fadeNav ? 'fade-bottom-after' : ''"/>
-
-  <div class="header-background header-outer center" id="home">
-    <div class="header-inner main-content-width space-between center-vertical">
+  <div class="header-background header-outer center relative" id="home">
+    <div class="absolute max-height max-width overflow-hidden">
+      <img class="max-width max-height cover" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2670&auto=format&fit=crop">
+    </div>
+    <div class="absolute max-width max-height dark-gradient">
+    </div>
+    <div class="header-inner main-content-width center-vertical absolute">
       <div class="center half-width fade-right-before" :class="fadeHeader ? 'fade-right-after' : ''">
         <div>
-          <h1 class="reset-margin main-headline mobile-center-text">Authentische <span class="prim-color">italienische</span> Pizza</h1>
-          <p class="default-textsize decent-color fade-top-before mobile-center-text" :class="fadeSubHeader ? 'fade-top-after' : ''">Frisch gebacken mit den besten Zutaten direkt aus Italien. Erleben Sie den wahren Geschmack Neapels in jedem Bissen.</p>
+          <h1 class="reset-margin main-headline white mobile-center-text">Authentische <span class="prim-color">italienische</span> Pizza</h1>
+          <p class="default-textsize white fade-top-before mobile-center-text" :class="fadeSubHeader ? 'fade-top-after' : ''">Frisch gebacken mit den besten Zutaten direkt aus Italien. Erleben Sie den wahren Geschmack Neapels in jedem Bissen.</p>
           <div class="mobile-center-horizontal fade-top-before mobile-button-column" :class="fadeSubButtons ? 'fade-top-after' : ''">
             <div class="center-horizontal">
               <UIButton title="Menü ansehen" @click="onMenu">
@@ -178,30 +192,27 @@
             <div class="button-space"></div>
             <div class="center-horizontal">
               <UIButton title="Reservieren" sec @click="onReservation">
-                <Icon size="25" class="prim-color">
+                <Icon size="25" class="white">
                   <Call28Regular/>
                 </Icon>
               </UIButton>
             </div>
           </div>
           <div style="height: 30px"></div>
-          <div class="mobile-center fade-top-before" :class="fadeSubInfos ? 'fade-top-after' : ''">
+          <div class="mobile-center center-vertical fade-top-before" :class="fadeSubInfos ? 'fade-top-after' : ''">
             <Icon size="25" class="prim-color">
               <Clock20Regular/>
             </Icon>
             <div style="width: 5px"></div>
-            <p class="reset-margin decent-color">Lieferung in 30 min.</p>
+            <p class="reset-margin white">Lieferung in 30 min.</p>
             <div style="width: 30px"></div>
             <Icon size="25" class="gold">
               <Star16Filled/>
             </Icon>
             <div style="width: 5px"></div>
-            <p class="reset-margin decent-color">4.8/5 Bewertung</p>
+            <p class="reset-margin white">4.8/5 Bewertung</p>
           </div>
         </div>
-      </div>
-      <div class="center half-width hide-pizza">
-        <img src="../assets/pizza.png" class="max-width fade-left-before" :class="fadePizza ? 'fade-left-after' : ''">
       </div>
     </div>
   </div>

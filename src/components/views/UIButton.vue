@@ -36,7 +36,7 @@
       <slot></slot>
       <span style="width: 10px"></span>
     </span>
-    <span class="ui-button-text default-font" :class="sec ? 'prim-color' : 'text-color'">{{ title }}</span>
+    <span class="ui-button-text default-font text-color">{{ title }}</span>
     <span v-if="right" class="center-vertical">
       <span style="width: 10px"></span>
       <slot></slot>
